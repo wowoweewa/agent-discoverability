@@ -1,0 +1,33 @@
+# Client work — never commit
+clients/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Node (if site grows here)
+node_modules/
+.next/
+dist/
+build/
+
+# Python (if any tooling)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local-only Claude state
+.claude/settings.local.json
+.claude/cache/
