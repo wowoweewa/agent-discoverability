@@ -1,16 +1,25 @@
-# Project-Scoped Subagents
+# Project Subagents — Minimal Roster
 
-Subagents in this folder are loaded only when Claude Code is run inside this project. They are personas/roles specific to running an Agent Discoverability audit business.
+Five role-based subagents. Names match how a real business is staffed so the operator never has to translate function names. All client-facing output goes through the operator before send until volume + track record justify trust delegation.
 
-## Build order (phased)
+## The roster
 
-Don't create these until the trigger condition is met. Building agents for traffic that doesn't exist is the #1 stall pattern for solo "automated businesses."
+| Agent | What they own | Project skills | Existing global skills used |
+|---|---|---|---|
+| **CEO** | Strategy + routing. Single front door. Reads incoming requests and dispatches to the right agent. Final approver on anything client-facing before send. | — (uses judgment over project context) | — |
+| **Marketer** | Outreach drafts (cold email + LinkedIn), prospect research, content, positioning, social | `drafting-outreach` | `market-research-expert`, `gws-gmail` |
+| **Auditor** | The technical team. Given a client URL, runs the 7-pillar methodology, probes LLMs, scores each pillar, drafts the audit markdown using `deliverables/audit-template.md` | `running-an-audit` | `claude-api` |
+| **QA** | Reviews every audit before it leaves. Checks methodology adherence, evidence quality, tone, factual accuracy | `reviewing-audit-quality` | — |
+| **Customer Support** | Inbound FAQ, lead qualification, booking calls, client comms during and after audit | `handling-inbound` | `gws-gmail`, `gws-calendar` |
 
-| Subagent | Trigger to build | Purpose |
-|---|---|---|
-| `email-comms` | Sending >5 outreach messages/week | Drafts CASL-compliant outreach + follow-up. Operator approves before send. |
-| `client-support` | >5 inbound inquiries/week | Answers FAQ, qualifies leads, books discovery calls. |
-| `qa-reviewer` | ≥10 audits delivered | Reviews each audit PDF for methodology adherence and tone before client send. |
+## What's intentionally NOT here
+
+- **Bookkeeper** — manual Google Sheet for first 6 months, far better than encoding categories before you know what matters
+- **Compliance logger** — operator logs CASL evidence manually until volume justifies a system
+- **Designer** — design is delivered via a `designing-audit-pdf` skill (to build), not a separate agent
+- **Onboarding/intake/sales** — folded into Customer Support and CEO
+
+If a need is recurring and not absolutely required to run the business, it doesn't get its own agent.
 
 ## Subagent file format
 
@@ -20,14 +29,25 @@ Each subagent lives at `.claude/agents/<name>.md` with frontmatter:
 ---
 name: <name>
 description: <one-line — when to invoke this agent>
-tools: <subset of tools the agent should have>
+tools: <subset of tools the agent should have, or omit for default>
 ---
 
 <system prompt for the subagent>
 ```
 
+## Build order
+
+| # | Agent | Trigger to build |
+|---|---|---|
+| 1 | **Auditor** | Methodology pillars 01–07 written. Spine of the business. |
+| 2 | **Marketer** | Auditor can deliver. Outreach to fill the pipeline. |
+| 3 | **CEO** | Marketer + Auditor stable. CEO becomes the front door. |
+| 4 | **QA** | 5+ audits manually delivered. Operator knows what "good" looks like. |
+| 5 | **Customer Support** | Inbound inquiries exceed ~5/week. |
+
 ## What NOT to do
 
-- Don't build a subagent until its trigger condition is met.
-- Don't give a subagent send-on-its-own authority. Operator approves all client-facing output until volume justifies otherwise (months out).
-- Don't duplicate methodology into the subagent prompt. Reference `methodology/` files instead.
+- Don't build subagents before their trigger condition is met
+- Don't give any subagent send-on-its-own authority. CEO drafts/approves; operator hits send
+- Don't duplicate methodology into subagent prompts — reference `methodology/` files
+- Don't add new agents without a recurring, business-critical need

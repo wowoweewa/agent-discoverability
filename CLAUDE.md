@@ -9,13 +9,19 @@ Productized AEO/GEO audit service. Solo operator. $1,500 fixed-price audit + $40
 - Client work goes in `clients/<client-slug>/` (gitignored).
 - For outreach copy, default to CASL-compliant patterns (sender ID + physical address + unsubscribe + B2B with conspicuously published contact).
 
-## Project subagents (build phased — don't create until needed)
+## Project subagents (minimal roster, build phased)
 
-| Subagent | Path | Built when |
+Five role-based subagents. Full breakdown in `.claude/agents/README.md`.
+
+| Subagent | Owns | Build when |
 |---|---|---|
-| `email-comms` | `.claude/agents/email-comms.md` | Sending >5 outreach messages/week |
-| `client-support` | `.claude/agents/client-support.md` | Inbound inquiries >5/week |
-| `qa-reviewer` | `.claude/agents/qa-reviewer.md` | ≥10 audits delivered |
+| `auditor` | Runs the 7-pillar audit methodology end-to-end | Methodology pillars 01–07 written |
+| `marketer` | Outreach, prospect research, content, positioning | Auditor can deliver |
+| `ceo` | Strategy + routing; single front door for the operator | Marketer + Auditor stable |
+| `qa` | Reviews audits before client send | 5+ audits delivered manually |
+| `customer-support` | Inbound FAQ, qualification, booking, client comms | Inbound inquiries exceed ~5/week |
+
+Don't build subagents before their trigger condition is met. Don't add new agents without a recurring, business-critical need.
 
 ## What NOT to do
 
