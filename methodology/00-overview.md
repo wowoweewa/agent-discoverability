@@ -16,12 +16,7 @@ The audit measures how visible a client's business is across LLM-powered search 
 
 ## Audit deliverable
 
-A single fixed-price audit produces a PDF (`deliverables/audit-template.md` is the skeleton) covering:
-- Executive summary (1 page)
-- Per-pillar score (0–10) and rationale
-- Prompt panel results — verbatim outputs from ChatGPT, Claude, Perplexity, Gemini for ~20 client-specific queries
-- Prioritized fix list ranked by effort × impact
-- Optional $400/mo monitoring retainer scope
+`deliverables/audit-template.md` defines the **section structure** (cover, executive summary, methodology, pillar scores, prompt panel results, prioritized fix list, implementation path, appendix). Visual design — typography, layout, score visualization, brand styling — is the responsibility of a separate `designing-audit-pdf` skill (to be built). Section template and design skill stay decoupled so either can change without touching the other.
 
 ## Methodology principles
 
