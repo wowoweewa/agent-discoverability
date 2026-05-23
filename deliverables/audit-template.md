@@ -13,7 +13,8 @@ Section structure only. No design, no formatting choices, no copy that locks vis
 
 ## Section 2 — Executive Summary
 
-- Overall agent-discoverability score (0–100, computed from pillar scores)
+- Overall agent-discoverability score (0–100, computed from pillar scores per `methodology/severity-rubric.md`)
+- If a prerequisite cap was applied (Pillar 2 or 4 critically broken), state this explicitly in the summary
 - Three-bullet "what this means in plain language"
 - Top 3 priority actions (effort × impact ranked)
 - One-sentence answer to: "When a potential customer asks ChatGPT/Claude/Perplexity about [client's category], does the AI recommend you?"
@@ -27,13 +28,13 @@ Section structure only. No design, no formatting choices, no copy that locks vis
 
 ## Section 4 — Pillar Scores
 
-For each of the 7 pillars (structured data, AI crawler access, llms.txt, content extractability, agent readiness, citation probing, brand mention monitoring):
+For each of the 7 pillars (structured data, AI crawler access, llms.txt *[signal-only, not scored]*, content extractability, agent readiness, citation probing, off-page authority):
 
 - Pillar name
 - Score (0–10)
 - One-line "what good looks like"
 - One-line "what we found"
-- Severity tag: Critical / Important / Nice-to-have
+- Severity tag: Critical (0–2) / Important (3–5) / Nice-to-have (6–7) / no tag (8–10) — per `methodology/severity-rubric.md`
 
 ## Section 5 — Prompt Panel Results
 
@@ -68,6 +69,7 @@ Three options the client can pick:
 - Schema/code snippets recommended
 - Tools used during audit (cited so client can verify)
 - Methodology version + audit date
+- Severity rubric version (currently v1.0) — see `methodology/severity-rubric.md`
 
 ---
 

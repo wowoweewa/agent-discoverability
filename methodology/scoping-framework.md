@@ -23,6 +23,8 @@ Three tiers (basic / pro / enterprise) is a SaaS pricing reflex that rarely fits
 
 The weekly workflow being wrapped: a business's check on whether ChatGPT, Claude, Perplexity, and Gemini are recommending them when potential customers ask category-relevant questions.
 
+**Current canonical pricing (single tier):**
+
 | Question | Answer |
 |---|---|
 | **Who owns it now** | Marketing manager, SEO agency, or no one (most common). 0–4 hrs/week if attempted. |
@@ -30,16 +32,24 @@ The weekly workflow being wrapped: a business's check on whether ChatGPT, Claude
 | **Output they need** | Per-LLM citation status, prioritized fix list, monthly delta vs. baseline |
 | **What breaks most often** | Schema decay after CMS changes; content extraction failures after redesign; new LLM crawler rules they didn't know about; competitors out-publishing them |
 | **What must stay human-reviewed** | Brand voice in any rebuild work; regulated-industry content (legal, financial, healthcare disclaimers); claims accuracy in cited content |
-| **$500/mo assisted** | Monthly citation tracking across 4 LLMs + 20 prompt panels, monthly delta report, prioritized DIY fix list. Client implements. |
-| **$2,000/mo managed** | All of assisted + monthly implementation work (schema, llms.txt, content updates), citation lift advisory, quarterly strategy review. Operator implements. |
+| **One-time audit** | $1,500 — full 7-pillar audit, prompt panel run, prioritized fix list, implementation path options |
+| **Monitoring retainer** | $400/mo — monthly citation tracking across 4 LLMs, delta report, advisory. Client implements fixes. Validated against the competitive set (Profound $399+, Athena $250-1,000+, Peec €89+) as mid-market credible. |
+| **Implementation engagement** | Custom (one-time build between retainer cycles for clients who want operator-implemented changes) |
 | **Proof needed to trust** | Case studies showing citation-share lift over 60–90 days; verbatim before/after LLM responses; verifiable schema audit logs; testimonials from same vertical |
 
 ## How this maps to the business
 
-- **One-time audit ($1,500)** = trial of the methodology; gateway into either retainer tier
-- **Assisted retainer ($500/mo)** = recurring monitoring; client does the work
-- **Managed retainer ($2,000/mo)** = recurring monitoring + implementation; operator does the work
-- **Implementation engagement (custom)** = one-time build between retainer cycles for clients who want a step change
+- **One-time audit ($1,500)** = trial of the methodology; gateway into the monitoring retainer
+- **Monitoring retainer ($400/mo)** = recurring citation tracking + delta report + advisory; client implements
+- **Implementation engagement (custom)** = scoped one-time build for clients who want operator-implemented changes
+
+## Future tier expansion (not currently offered)
+
+When the operator has 5+ retainer clients and proven case studies, two-tier expansion becomes viable:
+- **Assisted retainer ($500/mo)** — same as current $400/mo retainer, modest price increase reflecting validated track record
+- **Managed retainer ($2,000/mo)** — assisted + monthly implementation work (schema, content updates, off-page authority pursuit), quarterly strategy review; operator implements
+
+Reason for not currently offering two tiers: the ICP (10–100 employee Calgary SMBs) has limited budget headroom for $2K/mo retainers without proven ROI. Single-tier reduces buyer indecision and matches positioning to the buyer's price tolerance. Revisit when (a) 5+ paying retainer clients exist, (b) case studies show 30%+ citation-share lift, or (c) ICP expands upmarket.
 
 ## How to use this framework
 

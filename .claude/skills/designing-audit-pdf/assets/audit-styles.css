@@ -1,0 +1,209 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b6b6b;
+  --border: #e5e5e5;
+  --soft: #f8f8f8;
+  --critical: #b91c1c;
+  --important: #c2410c;
+  --nice: #a16207;
+  --strong: #15803d;
+  --accent: #0f172a;
+  --rule: #cbd5e1;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 7.5in;
+  margin: 0 auto;
+  padding: 0.7in 0.75in;
+}
+
+h1 {
+  font-family: "Georgia", "Iowan Old Style", "Charter", serif;
+  font-size: 26pt;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.15in 0;
+}
+
+h2 {
+  font-size: 15pt;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0.45in 0 0.15in 0;
+  padding-top: 0.18in;
+  border-top: 1px solid var(--rule);
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h2:first-of-type,
+h1 + h2 {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0.35in;
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: 600;
+  margin: 0.25in 0 0.08in 0;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h4 {
+  font-size: 10.5pt;
+  font-weight: 600;
+  margin: 0.18in 0 0.06in 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0 0 0.1in 0;
+}
+
+ul, ol {
+  margin: 0.05in 0 0.15in 0;
+  padding-left: 0.28in;
+}
+
+li {
+  margin-bottom: 0.05in;
+}
+
+li > p { margin-bottom: 0.05in; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.15in 0 0.2in 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.07in 0.1in;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+th {
+  font-weight: 600;
+  background: var(--soft);
+  border-bottom: 2px solid var(--accent);
+  font-size: 9pt;
+  letter-spacing: 0.01em;
+}
+
+code {
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 9pt;
+  background: var(--soft);
+  padding: 0 0.04in;
+  border-radius: 2px;
+}
+
+pre {
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 8.5pt;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  padding: 0.12in;
+  margin: 0.1in 0;
+  white-space: pre-wrap;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  overflow-x: auto;
+}
+
+pre code { background: transparent; padding: 0; }
+
+a { color: var(--accent); text-decoration: underline; }
+
+blockquote {
+  margin: 0.12in 0 0.12in 0;
+  padding: 0.05in 0.15in;
+  border-left: 3px solid var(--rule);
+  color: var(--muted);
+  font-style: italic;
+}
+
+strong { font-weight: 600; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0.3in 0;
+}
+
+.cover-meta {
+  font-family: "Georgia", "Iowan Old Style", serif;
+  font-size: 11pt;
+  color: var(--muted);
+  margin: 0 0 0.3in 0;
+  line-height: 1.7;
+}
+
+.severity-critical { color: var(--critical); font-weight: 600; }
+.severity-important { color: var(--important); font-weight: 600; }
+.severity-nice { color: var(--nice); font-weight: 500; }
+.severity-strong { color: var(--strong); font-weight: 500; }
+
+.score-overall {
+  font-family: "Georgia", "Iowan Old Style", serif;
+  font-size: 36pt;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  margin: 0.1in 0 0.05in 0;
+}
+
+.score-overall .denom {
+  font-size: 18pt;
+  color: var(--muted);
+}
+
+.cap-callout {
+  background: #fef3c7;
+  border-left: 4px solid var(--important);
+  padding: 0.1in 0.15in;
+  margin: 0.15in 0;
+  font-size: 10pt;
+}
+
+.pillar-table th:nth-child(1) { width: 22%; }
+.pillar-table th:nth-child(2) { width: 10%; text-align: center; }
+.pillar-table td:nth-child(2) { text-align: center; font-weight: 600; }
+.pillar-table th:nth-child(5),
+.pillar-table td:nth-child(5) { text-align: center; }
+
+@page {
+  size: letter;
+  margin: 0.5in 0.55in;
+}
+
+@media print {
+  body { padding: 0; max-width: none; }
+  h2 { page-break-after: avoid; }
+  h3 { page-break-after: avoid; }
+  table, pre, blockquote { page-break-inside: avoid; }
+}

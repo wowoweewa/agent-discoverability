@@ -1,12 +1,14 @@
-# Pillar 3 — `llms.txt`
+# Pillar 3 — `llms.txt` (non-scored signal)
+
+## Status: included for completeness, not scored
+
+As of May 2026, no major AI engine has confirmed using `llms.txt` for retrieval, ranking, or grounding. Google's John Mueller stated directly on Bluesky (December 2024, reaffirmed 2025): "FWIW no AI system actually uses llms.txt." Adoption among top-1M domains sits in the 1–10% range. Crawlers fetch the file but do not weight it.
+
+The check stays in the audit for two reasons: (a) sophisticated buyers ask about it, and (b) it's a 1-hour build that costs nothing if a future engine adopts the standard. **It does not move the audit score.** Treat as a hygiene artifact, not a lever.
 
 ## What it is
 
-A markdown file served at the site root (`/llms.txt`) that gives an AI-readable summary of the site: what the business does, key pages, contact info, and authoritative URLs. Proposed by Jeremy Howard (late 2024) as an emerging standard analogous to `robots.txt` and `sitemap.xml`. Optional companion file `/llms-full.txt` includes longer-form authoritative content for inlining.
-
-## Why it matters
-
-When an LLM agent visits a site to answer a user query, it benefits from a curated, low-noise summary instead of crawling the whole site. `llms.txt` delivers that summary in a format LLMs parse cleanly. Adoption is still early in 2026 — which means it's both a low-effort wedge for visibility and a way to signal AI-readiness to sophisticated buyers.
+A markdown file served at the site root (`/llms.txt`) that gives an AI-readable summary of the site: what the business does, key pages, contact info, authoritative URLs. Proposed by Jeremy Howard (late 2024). Optional companion `/llms-full.txt` includes longer-form authoritative content.
 
 ## How to audit
 
@@ -20,33 +22,29 @@ When an LLM agent visits a site to answer a user query, it benefits from a curat
 - [ ] One-paragraph blockquote summary directly under the H1
 - [ ] Sectioned by H2 with logical groupings (e.g., "## Services", "## Documentation", "## Pricing")
 - [ ] Each entry under a section is a markdown link (`[label](url)`) optionally followed by a short description
-- [ ] Total file size reasonable (under 50KB)
+- [ ] Total file size under 50KB
 - [ ] Links resolve to live pages (no 404s)
-- [ ] No marketing fluff or sales copy — just authoritative pointers
+- [ ] No marketing fluff — just authoritative pointers
 - [ ] `/llms-full.txt` (optional) present if the business has substantial documentation worth inlining
-- [ ] Linked from `robots.txt` or sitemap (helps discovery)
 
-### Scoring rubric
-- **0–2 (Critical)**: No `llms.txt` present
-- **3–5 (Poor)**: File exists but malformed, contains marketing copy, or has broken links
-- **6–7 (Adequate)**: Valid `llms.txt` with summary and key sections; missing some logical groupings
-- **8–9 (Strong)**: Complete, well-organized `llms.txt` covering services, contact, key resources
-- **10 (Excellent)**: Both `llms.txt` and `llms-full.txt` present and well-maintained; linked from `robots.txt`; updated within last 90 days
+### Reporting
 
-## How to fix
+Do not assign a 0–10 score. In the audit deliverable, report as one of:
+- **Present and well-formed** — file exists, follows the template, links resolve
+- **Present but malformed** — file exists, fails 2+ checks above
+- **Absent** — no file at `/llms.txt`
 
-### Quick wins (under 1 hr)
-- Generate a baseline `/llms.txt` from the site's existing nav and footer
-- Reference: see template below
+Include in the "Quick wins" appendix of the audit if absent or malformed. Do not include in the main score calculation.
 
-### Substantive fixes (1–5 hrs)
+## How to fix (if client asks)
+
+### Quick win (under 1 hr)
+- Generate a baseline `/llms.txt` from the site's existing nav and footer using the template below
 - Curate which pages belong (focus on authoritative, evergreen content — not promotional)
-- Add `/llms-full.txt` with inlined service descriptions, FAQs, and policies for sites with rich documentation
-- Link `/llms.txt` from `robots.txt` (`Sitemap: /llms.txt` is non-standard but increasingly recognized)
 
-### Deep fixes (>5 hrs / requires dev)
-- Auto-generate `llms.txt` from CMS content as part of build pipeline so it stays current
-- Variant `llms.txt` per language for multilingual sites
+### Substantive (1–3 hrs)
+- Add `/llms-full.txt` with inlined service descriptions, FAQs, and policies for sites with rich documentation
+- Auto-generate from CMS as part of build pipeline so it stays current
 
 ## Template
 
@@ -74,10 +72,7 @@ When an LLM agent visits a site to answer a user query, it benefits from a curat
 - Location: City, Province/State, Country
 ```
 
-## Worked example
-
-[Placeholder — populate from first real audit]
-
 ## References
 - [llms.txt proposal — Jeremy Howard](https://llmstxt.org/)
+- [Mueller statement on llms.txt non-use](https://bsky.app/profile/johnmu.com) — Google Search Advocate, December 2024, reaffirmed 2025
 - [llms.txt directory — sites that have adopted it](https://directory.llmstxt.cloud/)

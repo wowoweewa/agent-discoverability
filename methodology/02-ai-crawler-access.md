@@ -8,6 +8,12 @@ The site's `robots.txt`, meta robots tags, server-level bot rules (Cloudflare, A
 
 If GPTBot, ClaudeBot, PerplexityBot, or Google-Extended can't fetch the site, the LLMs they feed simply can't cite it — no amount of schema or content quality compensates. This is the single most common silent failure mode.
 
+Pair this pillar with [engine-substrates.md](./engine-substrates.md): the AI crawlers audited here are only one layer. The substrate crawlers (Bingbot, Googlebot, Brave) are the other. A site can pass this pillar perfectly and still be invisible if its substrate indexing is broken. Audit both.
+
+**Cloudflare default-block since July 1, 2025**: new Cloudflare zones default to blocking AI crawlers including GPTBot, ClaudeBot, and PerplexityBot. If the client uses Cloudflare and was onboarded after July 2025, assume blocking until proven otherwise.
+
+**Google-Extended caveat**: `Google-Extended: Disallow` blocks Gemini *training* only. It does NOT opt the site out of AI Overviews. Publishers cannot decline AIO surfacing while staying in Google Search — this is a known forced-coupling and is relevant context for clients in news/affiliate verticals where AIO has cut referral revenue 20–40%.
+
 ## How to audit
 
 ### Inputs
@@ -21,11 +27,13 @@ If GPTBot, ClaudeBot, PerplexityBot, or Google-Extended can't fetch the site, th
 - [ ] `GPTBot` (OpenAI training): allow / block / unspecified — document intent
 - [ ] `OAI-SearchBot` (ChatGPT search) — should be allowed for visibility
 - [ ] `ChatGPT-User` (user-triggered fetches) — should be allowed
-- [ ] `ClaudeBot` (Anthropic) — should be allowed
+- [ ] `ClaudeBot` (Anthropic training) — allow / block per training policy
+- [ ] `Claude-SearchBot` (Claude search-index supplementation) — should be allowed for visibility
+- [ ] `Claude-User` (live user-triggered fetches in Claude) — should be allowed
 - [ ] `Anthropic-AI` (legacy) — allowed or unspecified
 - [ ] `PerplexityBot` — should be allowed
 - [ ] `Perplexity-User` — should be allowed
-- [ ] `Google-Extended` (Gemini training) — separate from regular Googlebot
+- [ ] `Google-Extended` (Gemini training only — does NOT control AI Overviews) — separate from regular Googlebot
 - [ ] `Applebot-Extended` (Apple Intelligence) — should be allowed
 - [ ] `Bytespider` (TikTok) — separate decision
 - [ ] `meta name="robots"` and `X-Robots-Tag` headers don't override allow directives
