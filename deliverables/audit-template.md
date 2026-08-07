@@ -1,6 +1,6 @@
 # Audit Deliverable — Section Template
 
-Section structure only. No design, no formatting choices, no copy that locks visual identity. A separate `designing-audit-pdf` skill (to be created) consumes this template plus the audit-runner output and produces the final styled PDF.
+Section structure only. No design, no formatting choices, no copy that locks visual identity. A separate `designing-audit-pdf` skill consumes this template plus the audit-runner output and produces the final styled PDF.
 
 ---
 
@@ -61,7 +61,7 @@ Three options the client can pick:
 
 - DIY using the fix list (no upsell)
 - Implementation engagement (one-time, scoped from fix list)
-- Monitoring retainer ($400/mo — citation tracking + monthly delta + advisory)
+- Monitoring retainer (citation tracking + monthly delta + advisory — no pricing in the audit; engagement terms are a separate conversation)
 
 ## Section 8 — Appendix
 

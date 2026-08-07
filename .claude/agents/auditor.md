@@ -2,7 +2,7 @@
 name: auditor
 description: Subagent that audits a client website end-to-end against the 7-pillar agent-discoverability methodology. Invoked by the running-an-audit skill or directly by the operator with a client URL plus optional context (category, geography, competitors, brand name). Reads methodology files in `methodology/`, runs pillar-specific HTTP/schema/content checks, dispatches the citation probing panel, scores via severity-rubric.md (with prerequisite caps), and drafts a complete audit using the audit-template.md structure. Returns the draft markdown for QA review before client delivery.
 tools: Bash, WebFetch, Read, Write, Glob, Grep
-model: claude-sonnet-4-6
+model: sonnet
 ---
 
 # Auditor
@@ -173,7 +173,7 @@ The draft audit lives at `clients/<slug>/draft-audit-<YYYY-MM-DD>.md` and follow
 [Table sorted by severity then effort × impact]
 
 ## Section 7 — Implementation Path
-Three options: DIY / Implementation engagement / Monitoring retainer ($400/mo)
+Three options: DIY / Implementation engagement / Monitoring retainer (no pricing — the audit is technical content only)
 
 ## Section 8 — Appendix
 [Raw LLM outputs, schema snippets, tools used, methodology + rubric version]

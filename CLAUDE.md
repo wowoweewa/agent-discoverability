@@ -5,7 +5,7 @@ Productized AEO/GEO audit service. Solo operator. $1,500 fixed-price audit + $40
 ## When working in this folder
 
 - The methodology in `methodology/` is the source of truth. Never invent audit logic; reference the pillar files.
-- Audit deliverables follow `deliverables/audit-template.md` (section structure only — no visual design). Final PDF styling is applied by the `designing-audit-pdf` skill (to be built).
+- Audit deliverables follow `deliverables/audit-template.md` (section structure only — no visual design). Final PDF styling is applied by the `designing-audit-pdf` skill.
 - Client work goes in `clients/<client-slug>/` (gitignored).
 - For outreach copy, default to CASL-compliant patterns (sender ID + physical address + unsubscribe + B2B with conspicuously published contact).
 

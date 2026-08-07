@@ -1,6 +1,6 @@
 ---
 name: running-an-audit
-description: Runs a complete 7-pillar agent-discoverability audit for a client website. Use when the user says "run an audit on https://example.com", "audit this client", "do a full agent-discoverability audit", "/run-audit", "audit X for me", "check how visible Y is to AI agents", or provides any client URL with intent to produce the $1,500 audit deliverable. Validates inputs, invokes the auditor subagent, runs a QA review pass on the draft, and saves to `clients/<slug>/draft-audit-<YYYY-MM-DD>.md`. Methodology lives in `methodology/`; never duplicate its content into this skill.
+description: Runs a complete 7-pillar agent-discoverability audit for a client website. Use when the user says "run an audit on https://example.com", "audit this client", "do a full agent-discoverability audit", "/run-audit", "audit X for me", "check how visible Y is to AI agents", or provides any client URL with intent to produce the audit deliverable. Validates inputs, invokes the auditor subagent, runs a QA review pass on the draft, and saves to `clients/<slug>/draft-audit-<YYYY-MM-DD>.md`. Methodology lives in `methodology/`; never duplicate its content into this skill.
 ---
 
 # Running an Audit
@@ -130,7 +130,7 @@ Open the draft to review the full report before any client communication.
 - **Don't ship the draft directly to the client.** This skill produces `draft-audit-*.md`. Final client send is a separate operator step after manual review. For the first 3–5 client audits, the operator hand-edits the draft before send (draft-mode mitigation per PROGRESS.md).
 - **Don't dispatch the auditor without competitors.** Pillar 6 (citation probing) requires a competitor list to produce comparative findings. Missing competitors leaves Section 5 thin.
 - **Slug collisions matter.** Two clients with similar names (`acme-co` and `acme-corp`) can produce confusion. Use a longer slug if needed.
-- **Pricing language.** Section 7 of the draft mentions "$400/mo monitoring retainer" — this is canonical per `methodology/scoping-framework.md`. Two-tier pricing is a future expansion, not current. Don't substitute in $500/$2,000 if the auditor's draft uses the older language; correct to $400/mo single tier.
+- **No pricing in the draft.** The audit is a technical deliverable. If the auditor's draft names dollar amounts anywhere (Section 7 or elsewhere), strip them during QA — engagement pricing is a business conversation, not audit content.
 - **Don't dispatch the auditor twice for the same client on the same day.** It will overwrite the draft. If you need to re-run, archive the prior draft first (`mv draft-audit-YYYY-MM-DD.md draft-audit-YYYY-MM-DD-v1.md`).
 
 ## Constraints

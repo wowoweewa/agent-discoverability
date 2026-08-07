@@ -35,4 +35,4 @@ Each pillar produces a 0–10 score per its own rubric. The overall 0–100 audi
 
 ## Status
 
-Pillar files (01–07) are scaffolded but not yet written. See the project task list.
+Pillar files (01–07) written; severity rubric v1.0 in place. First end-to-end test audit completed 2026-08-07.

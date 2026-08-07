@@ -31,3 +31,7 @@ venv/
 # Local-only Claude state
 .claude/settings.local.json
 .claude/cache/
+
+# Internal business docs — repo is public, keep these local
+PROGRESS.md
+research/
