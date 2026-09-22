@@ -30,8 +30,6 @@ Don't build subagents before their trigger condition is met. Don't add new agent
 - Don't write to `clients/` from autocomplete or speculative work; client folders only get touched during real engagements.
 - Don't push commits without explicit user approval.
 
-## Open decisions (see top-level task list)
+## Open decisions
 
-- Vertical to focus first 10 outreach on (research pending)
-- Brand name and positioning angle
-- Whether the marketing site lives in this repo or as a separate `wowoweewa/agent-discoverability-site` repo
+Open decisions and tasks live in TASKS.md; never list them here.

@@ -19,7 +19,7 @@ site/                Marketing site (added once first audits close)
 
 ## Status
 
-Phase 1: methodology written, manual audit delivery, no automation. See task list for current sprint.
+Phase 1: methodology written, manual audit delivery, no automation. See TASKS.md for the current sprint.
 
 ## Conventions
 
