@@ -2,15 +2,17 @@
 
 Skills here load only when Claude Code is run inside this project. Reusable workflows that are not generalizable beyond this business belong here.
 
-Generalizable skills (e.g., a generic AEO methodology that any operator could use) belong in the global `~/Projects/claude-skills/` repo, not here.
+Generalizable skills (e.g., a generic AEO methodology that any operator could use) belong in the global `~/claude-skills` repo, not here.
 
-## Planned skills
+## Skills
 
-| Skill | Purpose | Built when |
+| Skill | Purpose | Status |
 |---|---|---|
-| `running-an-audit` | End-to-end audit workflow given a client URL: probe LLMs, score pillars, generate PDF | After methodology pillars 01–07 are written |
-| `drafting-outreach` | Generate CASL-compliant outreach to a target firm given their site + role | After vertical is chosen |
-| `monitoring-citations` | Monthly citation-tracking workflow for retainer clients | After first retainer signed |
+| `running-an-audit` | End-to-end audit workflow given a client URL: dispatches the auditor, runs a QA pass on the draft, saves it to the client folder | Built |
+| `probing-citations` | Pillar 6 citation panel: 25 queries against four assistants, scored, with a delta against the prior cycle | Built |
+| `designing-audit-pdf` | Renders the audit markdown as a styled HTML page for print to PDF | Built |
+| `drafting-outreach` | Generate CASL-compliant outreach to a target firm given their site + role | Planned, after a vertical is chosen |
+| `monitoring-citations` | Monthly citation-tracking workflow | Planned; `probing-citations` already covers the monthly re-run |
 
 ## Skill file format
 

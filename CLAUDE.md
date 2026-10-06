@@ -1,34 +1,42 @@
 # Project: Agent Discoverability
 
-Productized AEO/GEO audit service. Solo operator. $1,500 fixed-price audit + $400/mo monitoring retainer. CASL-compliant outreach. Calgary-based, serves Canadian and US clients.
+A free seven-pillar method, with Claude skills and one subagent, for auditing how visible a business website is to AI assistants (ChatGPT, Claude, Perplexity, Gemini). It is a lead magnet into consulting, never a priced product. No prices go in any tracked file.
+
+## Read order at resume
+
+1. PROGRESS.md, top entry only: state, next step, watch-outs.
+2. TASKS.md, first unchecked item: the next action and its owner tag.
+3. PLAN.md when the task needs the why or a closed decision.
+4. RESEARCH.md when the task needs the evidence behind a decision.
+
+## Facts
+
+- Stack: Markdown method files, three project skills and one subagent under `.claude/`. No app, no site, no dependencies.
+- Run: in a Claude Code session in this folder, say "run an audit on https://<site>". The `running-an-audit` skill dispatches the `auditor` subagent and writes a draft to `clients/<slug>/`. "render the audit" runs `designing-audit-pdf`.
+- Test: no tests; there is no code.
+- Deploy: not deployed.
+- Repo: PUBLIC GitHub `wowoweewa/agent-discoverability`, default branch `main`.
+- Local only (gitignored; never commit them): PROGRESS.md, PLAN.md, RESEARCH.md, `research/`, `outreach/`, `clients/`. They hold business detail. The retired price text is in `research/pricing-retired-2026-10-05.md`.
+- Privacy scan: `python3 ~/Projects/skills-public/scripts/privacy_scan.py`, run from this folder. One known harmless hit: the example address at `methodology/03-llms-txt.md` line 71.
 
 ## When working in this folder
 
 - The methodology in `methodology/` is the source of truth. Never invent audit logic; reference the pillar files.
-- Audit deliverables follow `deliverables/audit-template.md` (section structure only — no visual design). Final PDF styling is applied by the `designing-audit-pdf` skill.
+- Audit deliverables follow `deliverables/audit-template.md` (section structure only, no visual design). Final PDF styling is applied by the `designing-audit-pdf` skill.
 - Client work goes in `clients/<client-slug>/` (gitignored).
 - For outreach copy, default to CASL-compliant patterns (sender ID + physical address + unsubscribe + B2B with conspicuously published contact).
+- The repo is public. Write nothing personal in a tracked file: no email address, no client name, no price.
+- Run the privacy scan and /security-review before every push; the repo is public.
 
-## Project subagents (minimal roster, build phased)
+## Project subagents
 
-Five role-based subagents. Full breakdown in `.claude/agents/README.md`.
-
-| Subagent | Owns | Build when |
-|---|---|---|
-| `auditor` | Runs the 7-pillar audit methodology end-to-end | Methodology pillars 01–07 written |
-| `marketer` | Outreach, prospect research, content, positioning | Auditor can deliver |
-| `ceo` | Strategy + routing; single front door for the operator | Marketer + Auditor stable |
-| `qa` | Reviews audits before client send | 5+ audits delivered manually |
-| `customer-support` | Inbound FAQ, qualification, booking, client comms | Inbound inquiries exceed ~5/week |
-
-Don't build subagents before their trigger condition is met. Don't add new agents without a recurring, business-critical need.
+Five role-based subagents are planned and one is built, `auditor`. The roster and the trigger that allows each build are in `.claude/agents/README.md`. Don't build a subagent before its trigger is met. Don't add an agent without a recurring, business-critical need.
 
 ## What NOT to do
 
 - Don't build automation infrastructure before the manual workflow has run 3+ times.
-- Don't conflate methodology with skill plumbing — methodology is markdown content, skills are thin invocation triggers.
+- Don't conflate methodology with skill plumbing. Methodology is markdown content; skills are thin invocation triggers.
 - Don't write to `clients/` from autocomplete or speculative work; client folders only get touched during real engagements.
-- Don't push commits without explicit user approval.
 
 ## Open decisions
 

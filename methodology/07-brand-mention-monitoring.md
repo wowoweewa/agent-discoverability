@@ -116,9 +116,9 @@ Score is a weighted average: Part A (off-page authority, 70%) + Part B (tracking
 
 ## How this delivers the retainer
 
-The $400/mo monitoring retainer is justified by Part B — monthly re-runs of the Pillar 6 panel, delta reports, and surfacing of inaccuracies or competitor moves. Without ongoing tracking, the audit's findings go stale within 30–60 days. The retainer is the compound interest on the one-time audit.
+The monitoring retainer is justified by Part B — monthly re-runs of the Pillar 6 panel, delta reports, and surfacing of inaccuracies or competitor moves. Without ongoing tracking, the audit's findings go stale within 30–60 days. The retainer is the compound interest on the one-time audit.
 
-Implementation work (schema fixes, content updates, off-page authority pursuit) is scoped separately as one-time engagements rather than bundled into the retainer. See `scoping-framework.md` for future tier expansion plans.
+Implementation work (schema fixes, content updates, off-page authority pursuit) is scoped separately as one-time engagements rather than bundled into the retainer.
 
 ### Monthly delta report contents
 - Citation rate this month vs. last month (per LLM, overall)

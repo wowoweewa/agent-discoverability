@@ -34,4 +34,7 @@ venv/
 
 # Internal business docs — repo is public, keep these local
 PROGRESS.md
+PLAN.md
+RESEARCH.md
 research/
+outreach/

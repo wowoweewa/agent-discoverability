@@ -4,6 +4,8 @@ Five role-based subagents. Names match how a real business is staffed so the ope
 
 ## The roster
 
+Built so far: Auditor only (`.claude/agents/auditor.md`). The other four are planned; see Build order.
+
 | Agent | What they own | Project skills | Existing global skills used |
 |---|---|---|---|
 | **CEO** | Strategy + routing. Single front door. Reads incoming requests and dispatches to the right agent. Final approver on anything client-facing before send. | — (uses judgment over project context) | — |
@@ -16,7 +18,7 @@ Five role-based subagents. Names match how a real business is staffed so the ope
 
 - **Bookkeeper** — manual Google Sheet for first 6 months, far better than encoding categories before you know what matters
 - **Compliance logger** — operator logs CASL evidence manually until volume justifies a system
-- **Designer** — design is delivered via a `designing-audit-pdf` skill (to build), not a separate agent
+- **Designer** — design is delivered via the `designing-audit-pdf` skill, not a separate agent
 - **Onboarding/intake/sales** — folded into Customer Support and CEO
 
 If a need is recurring and not absolutely required to run the business, it doesn't get its own agent.
